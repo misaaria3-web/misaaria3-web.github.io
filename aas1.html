@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anarchy at Samarra — Campaign Dossier</title>
+<meta name="theme-color" content="#11151b">
+<style>
+:root{
+ --ink:#e9e5d8;--muted:#a8a99f;--night:#11151b;--panel:#1a2028;--panel2:#202833;
+ --gold:#d4b16a;--jade:#7eb6a3;--red:#b75e5b;--line:#39424b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--ink);font:16px/1.65 "Palatino Linotype",Palatino,Georgia,serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:radial-gradient(#d8c9a1 .55px,transparent .55px);background-size:7px 7px}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1120px,92%);margin:auto}
+header{min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+header:after{content:"";position:absolute;width:65vw;height:65vw;right:-14vw;top:8%;border-radius:50%;border:1px solid #8e7950;box-shadow:0 0 0 35px #d4b16a08,0 0 0 90px #d4b16a05; background:radial-gradient(circle at 40% 35%,#8eb7a522,transparent 48%),radial-gradient(circle at center,#d4b16a08,transparent 70%);pointer-events:none}
+.hero{position:relative;z-index:1;padding:8rem 0 6rem;max-width:750px}
+.kicker,.eyebrow{font:700 .72rem/1.5 system-ui,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--jade)}
+h1{font-size:clamp(3.5rem,9vw,7.6rem);line-height:.88;letter-spacing:-.055em;margin:1rem 0;color:var(--ink);font-weight:500}
+h1 span{display:block;color:var(--gold);font-style:italic;font-size:.72em;margin-top:.18em}
+.subtitle{font-size:1.2rem;color:#d1cbbd;max-width:590px}
+.stamp{display:inline-block;border:1px solid var(--red);color:#d58a83;padding:.4rem .8rem;letter-spacing:.18em;font:700 .7rem system-ui,sans-serif;transform:rotate(-3deg);margin:1.5rem 0}
+.meta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;color:var(--muted);font: .78rem system-ui,sans-serif;letter-spacing:.08em}
+.meta span{border-left:2px solid var(--gold);padding-left:.65rem}
+nav{position:sticky;top:0;z-index:10;background:#11151beF;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.navinner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+.brand{font:700 .76rem system-ui,sans-serif;letter-spacing:.15em;color:var(--gold)}
+.navlinks{display:flex;gap:1.2rem;flex-wrap:wrap;font: .72rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+main{padding:2rem 0 5rem}
+section{padding:4rem 0;border-bottom:1px solid var(--line)}
+.sectionhead{display:grid;grid-template-columns:90px 1fr;gap:1.4rem;align-items:start;margin-bottom:2rem}
+.num{font:italic 2rem Georgia;color:var(--gold);border-top:1px solid var(--gold);padding-top:.5rem}
+h2{font-size:clamp(2rem,4vw,3.3rem);font-weight:500;line-height:1.05;margin:0 0 .7rem}
+.lede{color:var(--muted);max-width:700px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:linear-gradient(145deg,var(--panel),#151a21);border:1px solid var(--line);padding:1.35rem;position:relative}
+.card:before{content:"";position:absolute;top:0;left:0;width:35px;height:2px;background:var(--gold)}
+.card h3{font-size:1.35rem;margin:.3rem 0 .65rem;font-weight:500}
+.card p{margin:0;color:#c3c4bc;font-size:.95rem}
+.card .tag{font:700 .65rem system-ui,sans-serif;color:var(--jade);letter-spacing:.15em;text-transform:uppercase}
+.pullquote{margin:2.4rem 0;padding:1.2rem 1.6rem;border-left:3px solid var(--gold);font-size:1.5rem;font-style:italic;color:#e1d3b2}
+.timeline{border-left:1px solid var(--line);margin-left:.5rem;padding-left:1.5rem}
+.event{position:relative;margin:0 0 1.7rem}
+.event:before{content:"";position:absolute;left:-1.9rem;top:.55rem;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #d4b16a18}
+.event h3{margin:0;font-size:1.15rem;font-weight:500;color:var(--gold)}
+.event p{margin:.3rem 0;color:#c3c4bc}
+details{background:var(--panel);border:1px solid var(--line);padding:1rem 1.2rem;margin:.7rem 0}
+summary{cursor:pointer;color:var(--gold);font-size:1.1rem}
+details p{color:#c3c4bc;margin:.8rem 0 0}
+.callout{background:#202b2b;border:1px solid #49645c;padding:1.4rem 1.6rem;margin-top:1.5rem}
+.callout h3{margin:0 0 .4rem;color:var(--jade);font-size:1.2rem}
+.callout p{margin:0;color:#d1d7ce}
+footer{padding:3rem 0;color:var(--muted);font: .75rem/1.7 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+footer .seal{font:italic 2rem Georgia;color:var(--gold);letter-spacing:0;text-transform:none}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.sectionhead{grid-template-columns:45px 1fr}.num{font-size:1.3rem}.navlinks{gap:.7rem}.navlinks a:nth-child(n+4){display:none}.hero{padding:6rem 0}.subtitle{font-size:1.05rem}}
+@media print{body{background:white;color:#111}body:before,nav,header:after{display:none}header{min-height:auto}.hero{padding:2rem 0}section{break-inside:avoid}.card{background:white;border-color:#aaa}.card p,.lede,.event p{color:#333}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap hero">
+  <div class="kicker">Campaign dossier · Lalupa Capitolina · 128.861 AH</div>
+  <h1>ANARCHY <span>at Samarra</span></h1>
+  <p class="subtitle">The Caliph is dead. The empire is not. In the glittering, fractured heart of Abbasiyya, the ghilman will decide who inherits the stars; or whether the old order survives at all.</p>
+  <div class="stamp">THE GOLDEN AGE IS OVER</div>
+  <div class="meta"><span>POLITICAL INTRIGUE</span><span>FACTIONAL STRUGGLE</span><span>MECHA LANCERS</span></div>
+ </div>
+</header>
+<nav><div class="wrap navinner">
+ <div class="brand">ABBASIYYA / ARCHIVE 128.861</div>
+ <div class="navlinks"><a href="#premise">Premise</a><a href="#ghilman">Ghilman</a><a href="#factions">Factions</a><a href="#samarra">Samarra</a><a href="#campaign">Play</a></div>
+</div></nav>
+<main class="wrap">
+<section id="premise">
+ <div class="sectionhead"><div class="num">I</div><div><div class="eyebrow">A throne without a master</div><h2>The empire stands at the edge</h2><p class="lede">Year 128.861 AH (Anno Hegirae). The glorious Haqq-Caliphate Empire of Abbasiyya stretches from the Misrata system in the west to the Indumultan system in the east, a range spanning 53 light-years from end to end of a nebula.</p></div></div>
+ <p>The haqq-caliphate has enjoyed its long-lasting Golden Age. Yet, the current haqq-caliph Mutawakkil is a tyrant emperor who throws centuries of progress all to the ground. The nobles of the empire enjoy using another human beings as their playthings and pawns. They own slaves from their conquered lands.</p>
+ <p>You are <em>ghilman</em>, the slave-soldiers/mercenaries of the empire’s armies. You were taken, abducted, and sold to the highest bidder. You, who were conquered from other lands, will conquer lands for the haqq-caliph.</p>
+ <p>However, ghilman is not just mere slaves. They can enjoy high pay, educated in various fields, access rare technology, and much more. They have power and political prowess. They can even buy their own freedom. In theory, anyways.</p>
+ <p>Realizing that Mutawakkil is a threat to his own empire, a group of ghilman murders him in public. Anarchy spreads to the rest of the Abbasid haqq-caliphate empire.</p>
+ <div class="pullquote">Now, let the show begin: it’s time for the ghilman class, you, to rule!</div>
+ <p> </p>
+</section>
+<section id="ghilman">
+ <div class="sectionhead"><div class="num">II</div><div><div class="eyebrow">The lancer corps</div><h2>Ghilman: servants, soldiers, kingmakers</h2><p class="lede"><em>Ghilman</em> is the plural form of the word, the singular form is <em>ghulam</em>. The word means boys or servants. PCs are ghilman, slave-soldiers cavalry Lancers of the empire. The party belongs to a ghilman faction.</p></div></div>
+ <div class="grid">
+  <article class="card"><div class="tag">The contradiction</div><h3>Privilege in chains</h3><p>Ghilman may receive high pay, education, rare technology, and avenues to political power. Some can theoretically purchase freedom. Yet their status remains built on coercion, and that promise of liberty is far from guaranteed.</p></article>
+  <article class="card"><div class="tag">The image</div><h3>Elegant star-cavalry</h3><p>Imagine a corps of elegant, youthful, androgynous cavalry lancers in the service of a galactic empire (yes, twink femboy Lancers).</p></article>
+  <article class="card"><div class="tag">The reality</div><h3>Never a united class</h3><p>Ghilman are always the minority of the population. They are not united yet. Various factions fight one another for power. The head of a ghilman faction is usually the most powerful and/or the most cunning of the division who has great visions for Abbasiyya’s future.</p></article>
+ </div>
+</section>
+<section id="factions">
+ <div class="sectionhead"><div class="num">III</div><div><div class="eyebrow">The contest for succession</div><h2>Every faction has a candidate</h2><p class="lede">Due to the nature of the haqq-caliphate, we can’t go full commie route here. Instead, each ghilman and nobles faction will pick a candidate that will become the next haqq-caliph in hope of stopping the anarchy.</p></div></div>
+ <div class="grid">
+  <article class="card"><div class="tag">Ghilman factions</div><h3>Power with a purpose</h3><p>Rival lancer divisions pursue competing political projects. They may share enemies, but they do not necessarily share a future. Favors, influence, and military leverage are their currency.</p></article>
+  <article class="card"><div class="tag">Noble factions</div><h3>Shadows of the old regime</h3><p>“Nobles” refers to the aristocratic class that backed and benefited the old rule of Mutawakkil. They are mostly corrupt and have no respect and will for better progress. They are the last stands of Mutawakkil’s shadows who will clutch hard at their seats of powers. Just like the ghilman, the nobles are also disparate and not united. </p></article>
+  <article class="card"><div class="tag">The succession</div><h3>A throne to be claimed</h3><p>Each faction chooses a candidate. Alliances are temporary; a favor today can become a debt tomorrow. The next ruler may preserve the empire, reshape it, or simply inherit its fractures.</p></article>
+ </div>
+ <div class="callout"><h3>Session Zero: build your faction</h3><p>During session 0, we will create the details of your ghilman faction and decide the faction’s head that will become leader, patron, and mentor to you. We will also decide your faction’s enemies, from the nobles side and the ghilman side.</p></div>
+</section>
+<section id="samarra">
+ <div class="sectionhead"><div class="num">IV</div><div><div class="eyebrow">Capital planet · Abbasiyya</div><h2>Samarra, city of splendor and squalor</h2><p class="lede">The capital planet of Abbasiyya is Samarra.</p></div></div>
+ <div class="grid">
+  <article class="card"><div class="tag">The palace</div><h3>Decadence made stone</h3><p>The planet houses the decadent palace of the haqq-caliph, that becomes even more extravagant because of Mutawakkil’s spendings.</p></article>
+  <article class="card"><div class="tag">The metropolis</div><h3>Unequal heights</h3><p>Picture a lush metropolis full of tall buildings (either beautiful skyscraping apartments to the disgusting slum towers).</p></article>
+  <article class="card"><div class="tag">The frontier</div><h3>Lalupa Capitolina</h3><p>The haqq-caliphate exists in a nebula called Lalupa Capitolina. It is a nebula full of rare minerals, lush lands, space clouds prime to be researched, and other wonders. It is no surprise that this nebula is envied by the spacefaring civilizations that gaze upon it. Neighboring empires wait for Abbasiyya to weaken to take small bits of the nebula.</p></article>
+ </div>
+ <p>This campaign will mostly set in Samarra, but if the needs arise, there is a possibility to go to other planets or frontiers of the haqq-caliphate, either for politicking or warring.</p>
+</section>
+<section id="campaign">
+ <div class="sectionhead"><div class="num">V</div><div><div class="eyebrow">What to expect at the table</div><h2>Favor, influence, and the clash of lances</h2><p class="lede">This campaign focuses on the struggle for power to determine the next haqq-caliph.</p></div></div>
+ <div class="timeline">
+  <div class="event"><h3>Roleplay first</h3><p>We will mostly roleplay as pilots.</p></div>
+  <div class="event"><h3>Factional conflict</h3><p>Conflicts <em>will</em> happen, ranging from the political intrigue of giving and taking favors and influences to military conflicts where factions collide with each other in sparks and blood.</p></div>
+  <div class="event"><h3>To the death</h3><p>Expect big mecha combat to happen once every 2-3 roleplay sessions.</p></div>
+ </div>
+ <details><summary>Haqqislam: the Search for Knowledge</summary><p>The main religion of the haqq-caliphate is <em>Haqqislam</em>, a new branch of Islam that is based on Infinity’s universe. It resulted from the re-founding of this belief system from a humanistic point of view, based on the doctrine of the Search for Knowledge. This new Islam has cast off the obscurantism of times past returning to its origins, to the golden age of the great caliphates during which it was a center of knowledge. The true goal of Haqqislam is the Search for Knowledge, the belief that wisdom will guide humanity towards Complete Knowledge, and total union with Allah.</p></details>
+ <details><summary>Campaign tone and themes</summary><p>Decadent imperial grandeur, political fragmentation, courtly rivalry, complicated agency under an oppressive system, and the tension between personal ambition and the future of a civilization. The ghilman are powerful players, but the structures that bind them remain part of the conflict.</p></details>
+</section>
+</main>
+<footer><div class="wrap"><div class="seal">بسم العلم · In the pursuit of knowledge</div><p>Anarchy at Samarra · Campaign setting dossier<br>128.861 AH · Lalupa Capitolina · The Abbasiyya succession crisis</p></div></footer>
+</body>
+</html>
