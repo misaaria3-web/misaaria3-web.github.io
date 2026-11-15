@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCHIVE // Anarchy at Samarra</title>
+
+<style>
+:root {
+    --bg: #080b14;
+    --panel: #101725;
+    --panel2: #151f30;
+    --line: #29394e;
+    --text: #dce7f2;
+    --muted: #8295aa;
+    --purple: #bd70ff;
+    --cyan: #65eaff;
+    --red: #ff637c;
+}
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 80% 0%, #25123c 0%, transparent 35%),
+        var(--bg);
+    color: var(--text);
+    font-family: "Arial", sans-serif;
+    line-height: 1.65;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 28px 36px;
+    min-height: 100vh;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+}
+
+.brand {
+    color: var(--cyan);
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.archive-status {
+    color: var(--muted);
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+h1, h2, h3 {
+    font-family: "Arial", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.subtitle {
+    color: var(--purple);
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.metadata {
+    margin: 22px 0;
+    padding: 12px 16px;
+    background: #101725;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--cyan);
+    color: var(--muted);
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.metadata span { color: var(--cyan); }
+
+.notice {
+    border: 1px solid #713b55;
+    background: #241522;
+    color: #ffb5c4;
+    padding: 12px 16px;
+    margin: 18px 0;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 12px;
+}
+
+.infobox {
+    float: right;
+    width: 310px;
+    margin: 0 0 22px 25px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: 0 0 22px #0008;
+    font-size: 13px;
+}
+
+.infobox-title {
+    background: var(--panel2);
+    color: var(--cyan);
+    text-align: center;
+    padding: 13px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--line);
+}
+
+.infobox td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #202d3e;
+    vertical-align: top;
+}
+
+.infobox td:first-child {
+    color: var(--muted);
+    width: 36%;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 11px;
+}
+
+.flag {
+    width: 120px;
+    height: 60px;
+    margin: 10px auto 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 12px #000;
+}
+
+.black-flag { background: #030303; }
+
+.black-flag::after {
+    content: "";
+    position: absolute;
+    top: 26px;
+    width: 100%;
+    height: 8px;
+    background: #a020f0;
+    box-shadow: 0 0 12px #a020f0;
+}
+
+.red-flag {
+    background: #a9192c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flag-symbol { color: #eee; font-size: 28px; }
+
+.flag-caption {
+    text-align: center;
+    color: var(--muted);
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 19px;
+    color: var(--cyan);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 7px;
+    margin-top: 32px;
+    letter-spacing: 2px;
+}
+
+h2::before {
+    content: "// ";
+    color: var(--purple);
+    font-family: "Consolas", "Courier New", monospace;
+}
+
+h3 {
+    color: var(--purple);
+    font-size: 15px;
+    letter-spacing: 1.5px;
+}
+
+p {
+    font-size: 14px;
+    letter-spacing: 0.2px;
+}
+
+.toc {
+    display: inline-block;
+    padding: 14px 22px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    font-size: 13px;
+}
+
+.toc-title {
+    color: var(--cyan);
+    font-family: "Consolas", "Courier New", monospace;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
+}
+
+a {
+    color: var(--cyan);
+    text-decoration: none;
+}
+
+a:hover { color: var(--purple); }
+
+.references {
+    font-size: 13px;
+}
+
+.references li {
+    margin-bottom: 7px;
+}
+
+.footer {
+    border-top: 1px solid var(--line);
+    margin-top: 40px;
+    padding-top: 18px;
+    color: var(--muted);
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.status { color: var(--red); font-weight: bold; }
+
+@media(max-width:700px) {
+    .container { padding: 18px; }
+    .infobox {
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
+    h1 { font-size: 28px; }
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="topbar">
+    <div class="brand">ABBASIYYA // IMPERIAL ARCHIVE</div>
+    <div class="archive-status">ARCHIVE NODE 07 · SAMARRA SYSTEM</div>
+</div>
+
+<div class="subtitle">Historical record · Political conflicts · Imperial era</div>
+<h1>Anarchy at Samarra</h1>
+
+<div class="metadata">
+    RECORD ID: <span>AA-128861-SMR</span> &nbsp;|&nbsp;
+    ARCHIVE DATE: <span>128.861 AH</span> &nbsp;|&nbsp;
+    ACCESS: <span>PUBLIC HISTORICAL RECORD</span>
+</div>
+
+<div class="notice">
+    <b>⚠ CONFLICT RECORD:</b> Succession unresolved. Historical record remains active.
+</div>
+
+<table class="infobox">
+<tr><td colspan="2" class="infobox-title">CONFLICT PROFILE</td></tr>
+<tr>
+<td colspan="2" style="text-align:center;padding:14px;">
+    <div class="flag black-flag"></div>
+    <b>Abbasiyya Imperial Standard</b>
+    <div class="flag-caption">Black field · Purple luminous stripe</div>
+    <br>
+    <div class="flag red-flag"><span class="flag-symbol">✦</span></div>
+    <b>Ghilman Banner</b>
+    <div class="flag-caption">Red field</div>
+</td>
+</tr>
+<tr><td>Period</td><td>128.861 AH – present</td></tr>
+<tr><td>Location</td><td>Samarra, Abbasiyya</td></tr>
+<tr><td>Region</td><td>Lalupa Capitolina Nebula</td></tr>
+<tr><td>Cause</td><td>Assassination of Mutawakkil</td></tr>
+<tr><td>Status</td><td class="status">ONGOING</td></tr>
+<tr><td>Belligerents</td><td>Ghilman factions and noble houses</td></tr>
+</table>
+
+<p>
+The <b>Anarchy at Samarra</b> was a political and military crisis within the Haqq-Caliphate Empire of Abbasiyya, beginning in 128.861 AH following the assassination of Haqq-Caliph Mutawakkil by a group of ghilman.
+</p>
+
+<p>
+His death shattered imperial authority as rival ghilman commanders and noble houses began competing to install their preferred candidate as the next Haqq-Caliph.
+</p>
+
+<div class="toc">
+<div class="toc-title">RECORD INDEX</div>
+<ol>
+<li><a href="#background">Background</a></li>
+<li><a href="#assassination">Assassination</a></li>
+<li><a href="#factions">Factions</a></li>
+<li><a href="#situation">Current situation</a></li>
+<li><a href="#references">Historical sources</a></li>
+</ol>
+</div>
+
+<h2 id="background">Background</h2>
+
+<p>
+Abbasiyya is a vast interstellar empire extending approximately 53 light-years across the Lalupa Capitolina Nebula. Its capital, Samarra, is the seat of the Haqq-Caliph and imperial court.
+</p>
+
+<p>
+Under Mutawakkil, corruption and political repression spread through the court. His rule alienated the military establishment, particularly the ghilman: an elite class of enslaved soldiers who had accumulated considerable wealth, education, and influence.
+</p>
+
+<h2 id="assassination">Assassination</h2>
+
+<p>
+In 128.861 AH, a group of ghilman publicly assassinated Mutawakkil. The conspirators sought to end his rule but failed to establish a common successor or government.
+</p>
+
+<p>
+The imperial court quickly divided due to military commanders and noble families brutal fightings. Each faction began gathering supporters to influence over the vacant throne.
+</p>
+
+<h2 id="factions">Factions</h2>
+
+<p>
+The ghilman are divided among rival commanders, each commanding their own troops and political alliances. Though united by their opposition to Mutawakkil, they disagree over the empire's future.
+</p>
+
+<p>
+The noble houses are equally divided. Some seek to restore the old order, while others support rival claimants in exchange for wealth and political power.
+</p>
+
+<p>
+Neither side possesses unified leadership. The conflict is a struggle for the caliphate rather than a single revolution.
+</p>
+
+<h2 id="situation">Current situation</h2>
+
+<div class="notice">
+    <b>ARCHIVE STATUS // 128.861 AH</b><br>
+    No claimant has secured uncontested control of Samarra
+    or the imperial government.
+</div>
+
+<p>
+Samarra remains the centre of the struggle. Alliances shift between military commanders and noble houses as they compete for the throne. Neighbouring powers watch the empire's weakening borders with growing interest.
+</p>
+
+<p>
+The future of Abbasiyya remains uncertain.
+</p>
+
+<h2 id="references">Historical sources</h2>
+
+<div class="references">
+<ol>
+<li>Ibn Rashid al-Samarri. <i>Kitab Akhbar al-Fitna</i> (Book of the Reports of the Discord).</li>
+<li>Abu'l-Hasan al-Baghdadi. <i>Tarikh al-Khulafa wa'l-Muluk</i> (History of Caliphs and Kings).</li>
+<li>Yahya ibn Faraj. <i>Kitab al-Ghilman wa'l-Jund</i> (Book of the Ghilman and the Army).</li>
+<li>Abdallah al-Warraq. <i>Akhbar Dar al-Khilafa</i> (Reports of the Caliphal Court).</li>
+<li>Qasim al-Mawsili. <i>Al-Fitan fi Zaman al-Mutawakkil</i> (The Tumults of Mutawakkil's Age).</li>
+</ol>
+</div>
+
+<div class="footer">
+    ABBASIYYA IMPERIAL ARCHIVE · HISTORICAL RECORD AA-128861-SMR
+    <br>
+    Preserved in the Samarra Central Data Repository.
+    <br>
+    ARCHIVE TERMINAL // END OF RECORD
+</div>
+
+</div>
+</body>
+</html>
